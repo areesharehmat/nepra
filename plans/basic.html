@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NEPRA Compliance - SPS</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+        <div class="logo">
+        <a href="index.html">
+            <img src="../images/logo-white.png" alt="SPS NEPRA Logo">
+        </a>
+        </div>
+
+        <!-- Accessible toggle button -->
+        <button class="menu-toggle" id="menu-toggle"
+                aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+        <span class="icon" aria-hidden="true"></span>
+        </button>
+
+        <ul class="nav-links" id="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="activities.html">Activities</a></li>
+        <li><a href="about.html">About Us</a></li>
+        </ul>
+    </nav>
+  </header>
+
+
+  <section id="form" class="compliance-form">
+    <h2>NEPRA Compliance Form</h2>
+    <form id="nepraForm">
+      <label>Name:</label>
+      <input type="text" id="name">
+      <small class="error" id="nameError"></small>
+      <label>Email:</label>
+      <input type="email" id="email">
+      <small class="error" id="emailError"></small>
+      <label>Phone:</label>
+      <input type="text" id="phone">
+      <small class="error" id="phoneError"></small>  
+      <label>Company / Organization:</label>
+      <input type="text" id="company">
+      <small class="error" id="companyError"></small>
+      <label>Job Title / Role:</label>
+      <input type="text" id="role">
+      <small class="error" id="roleError"></small>
+      <label>Select Date:</label>
+      <input type="date" id="date">
+      <small class="error" id="dateError"></small>
+      <label>Select Time:</label>
+      <input type="time" id="time">
+      <small class="error" id="timeError"></small>
+      <label>
+        <input type="checkbox" id="terms"> I agree to the Terms & Conditions
+      </label>
+      <small class="error" id="termsError"></small>
+      <button type="submit">Submit</button>
+    </form>
+    <div id="formMessage"></div>
+  </section>
+
+  <script src="../js/script.js"></script>
+  <script src="../js/validation.js"></script>
+    
+</body>
+</html>

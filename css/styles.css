@@ -1,0 +1,484 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+header {
+  background: #000000;
+  color: #fff;
+  padding: 1rem;
+}
+
+.logo img {
+  height: 50px !important;
+  width: auto !important;
+}
+
+
+/* Base navbar (keep your existing styles too) */
+.navbar { display:flex; justify-content:space-between; align-items:center; width:100%;
+  padding:15px 40px; position:fixed; top:0; left:0; z-index:1000; background:rgba(0,0,0,.7); box-sizing:border-box; }
+
+.nav-links { list-style:none; margin:0; padding:20px; gap:20px; display:none;
+  position:absolute; right:0; top:60px; width:220px; background:rgba(0,0,0,.9); border-radius:0 0 0 8px; flex-direction:column; }
+.nav-links.active { display:flex; }
+.nav-links a { color:#fff; text-decoration:none; font-weight:500; }
+
+.nav-links a:hover{
+    color:#4869c5;
+}
+.menu-toggle { background:transparent; border:0; cursor:pointer; padding:8px; line-height:1; }
+.menu-toggle .icon::before { content:"☰"; font-size:28px; color:#fff; display:inline-block; }
+.menu-toggle.open .icon::before { content:"✖"; }
+
+/* Optional: on large screens you might want the menu inline */
+@media (min-width: 1024px) {
+  /* If you ALSO want a horizontal menu on desktop, uncomment:
+  .nav-links { position:static; display:flex; flex-direction:row; width:auto; background:transparent; padding:0; }
+  .nav-links.active { display:flex; }
+  */
+}
+
+
+.hero {
+        position: relative;
+  background: url("../images/banner-2.jpg") no-repeat center center/cover;
+    min-height: 100vh; /* fill full viewport */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+
+.hero .btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background: #1e3a8a;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+header.hero {
+    position: relative;
+    background: url('../images/banner-2.jpg') center/cover no-repeat;
+    height: 80vh; /* adjust as needed */
+    color: white;
+}
+
+header.hero .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1;
+}
+
+/* Hero content stays above the overlay */
+header.hero .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+    padding: 20px;
+}
+
+
+.plans {
+  padding: 2rem;
+  text-align: center;
+}
+
+.plan-cards {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.card {
+  background: #f8fafc;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: 200px;
+}
+
+.compliance-form {
+  padding: 2rem;
+}
+
+.compliance-form form {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: auto;
+}
+
+.compliance-form input, button {
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+button {
+  background: #1e3a8a;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.error {
+  color: #e74c3c;       /* red */
+  font-size: 14px;
+  margin-top: 5px;
+  display: block;       /* ensures it’s on its own line */
+  font-weight: 500;
+}
+
+input.error-field {
+  border: 2px solid #e74c3c;
+  background-color: #fff5f5;
+}
+
+#formMessage {
+  margin-top: 15px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+#formMessage.success {
+  color: #27ae60; /* green */
+}
+
+#formMessage.error {
+  color: #e74c3c; /* red */
+}
+
+/* Section wrapper */
+.plans {
+  padding: 80px 20px;
+  background: #f8f9fa; /* light gray background */
+  text-align: center;
+}
+
+.plans h2 {
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  color: #222;
+}
+
+/* Plan card container */
+.plan-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+/* Card styling */
+/* Section */
+.plans {
+  padding: 80px 20px;
+  background: #f8f9fa;
+  text-align: center;
+}
+
+.plans h2 {
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  color: #222;
+}
+
+/* Grid layout */
+.plan-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Card base */
+.card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 40px 25px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+/* Featured plan */
+.card.featured {
+  border: 2px solid #004aad;
+  background: #f0f6ff;
+  transform: scale(1.05);
+}
+
+/* Titles */
+.card h3 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: #004aad;
+}
+
+/* Pricing */
+.price {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 15px 0;
+  color: #27ae60;
+}
+
+.price span {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Features list */
+.features {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+  text-align: left;
+}
+
+.features li {
+  font-size: 1rem;
+  color: #444;
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+}
+
+/* Buttons */
+.card .btn {
+  display: inline-block;
+  background: #004aad;
+  color: #fff;
+  text-decoration: none;
+  padding: 12px 25px;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.card .btn:hover {
+  background: #003580;
+}
+
+/* Featured plan button different */
+.card.featured .btn {
+  background: #27ae60;
+}
+
+.card.featured .btn:hover {
+  background: #1e8c4e;
+}
+
+/* About NEPRA Section */
+/* About NEPRA Section */
+.about-nepra {
+  padding: 80px 20px;
+  background: #fff;
+  color: #333;
+}
+
+.about-nepra .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Split Layout */
+.split-layout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: center;
+}
+
+.split-layout .intro {
+  flex: 1 1 45%;
+}
+
+.split-layout .intro h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #004aad;
+}
+
+.split-layout .intro p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  color: #555;
+}
+
+.split-layout .intro .btn {
+  display: inline-block;
+  margin-top: 15px;
+  background: #004aad;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.split-layout .intro .btn:hover {
+  background: #00337a;
+}
+
+/* Features Grid */
+.features-grid {
+  flex: 1 1 50%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.feature {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 25px 20px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.feature .icon {
+  font-size: 2rem;
+  margin-bottom: 12px;
+  color: #27ae60;
+}
+
+.feature h3 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  color: #004aad;
+}
+
+.feature p {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .split-layout {
+    flex-direction: column;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Partners Section */
+.partners {
+  padding: 60px 20px;
+  background: #f8f9fa;
+  text-align: center;
+}
+
+.partners h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #004aad;
+}
+
+.logo-slider {
+  overflow: hidden;
+  width: 100%;
+}
+
+.logos {
+  display: flex;
+  gap: 60px;
+  transition: transform 0.5s linear;
+}
+
+.logos img {
+  height: 50px;
+  width: auto;
+  transition: transform 0.3s ease;
+}
+
+.logos img:hover {
+  transform: scale(1.1);
+}
+
+
+/* Footer Styles */
+.footer {
+  background-color: #212529;
+  color: #f8f9fa;
+}
+
+.footer-link {
+  color: #dee2e6;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+  color: #dc3545;
+  text-decoration: underline;
+}
+
+.social-links a {
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+  line-height: 36px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  background-color: #dc3545;
+  color: white !important;
+  transform: translateY(-3px);
+}
+
+.opacity-75 {
+  opacity: 0.85;
+}
+
+.form-control {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.form-control:focus {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  border-color: #dc3545;
+  box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25);
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+.btn-danger:hover {
+  background-color: #bb2d3b;
+  border-color: #b02a37;
+}
