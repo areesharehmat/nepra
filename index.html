@@ -3,40 +3,93 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NEPRA Compliance - SPS</title>
-  <link rel="stylesheet" href="css/styles.css">
-  <!-- Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <!-- Font Awesome 6 (Free Version) -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <meta name="description" content="SPS provides NEPRA compliance consulting, pricing plans, and expert services to ensure your business meets regulatory standards.">
+  <title>NEPRA Compliance Consulting - SPS</title>
+  <link rel="stylesheet" href="css/styles.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 <body>
 
-  <!-- Navbar -->
-    <header>
-    <nav class="navbar">
-        <div class="logo">
-        <a href="index.html">
-            <img src="images/logo-white.png" alt="SPS NEPRA Logo">
+<!-- Navbar -->
+<nav class="navbar fixed-top">
+  <div class="container-fluid">
+    <!-- Logo -->
+    <a class="navbar-brand" href="#">
+      <img src="images/logo-white.webp" alt="Logo">
+    </a>
+
+    <!-- Navbar links -->
+    <ul class="navbar-nav ms-auto d-flex flex-row">
+      <!-- Example Item -->
+      <li class="nav-item">
+        <a class="nav-link d-flex align-items-center" href="#">Home
         </a>
-        </div>
+      </li>
 
-        <!-- Accessible toggle button -->
-        <button class="menu-toggle" id="menu-toggle"
-                aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
-        <span class="icon" aria-hidden="true"></span>
-        </button>
-
-        <ul class="nav-links" id="nav-links">
-        <li><a href="#">Home</a></li>
-        <li><a href="products.html">Products</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="plans.html">Plans</a></li>
-        <li><a href="activities.html">Activities</a></li>
-        <li><a href="about.html">About Us</a></li>
+      <li class="nav-item dropdown">
+        <a class="nav-link d-flex align-items-center" href="#">
+          Services <span class="plus-icon">+</span>
+        </a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">Security Policy Management</a></li>
+          <li><a class="dropdown-item" href="#">Data Mangement</a></li>
+          <li><a class="dropdown-item" href="#">Regualtory Reportingt</a></li>
+          <li><a class="dropdown-item" href="#">Monitoring and Incident Response</a></li>
+          <li><a class="dropdown-item" href="#">Security Risk vulnerability Assesment</a></li>
         </ul>
-    </nav>
-    </header>
+      </li>
+
+      <!-- Repeat the same for Services, Pricing, Activities, About Us -->
+
+      <!-- Services -->
+      <li class="nav-item dropdown">
+        <a class="nav-link d-flex align-items-center" href="#">
+          Products <span class="plus-icon">+</span>
+        </a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="partners/fortinet.html">Fortinet</a></li>
+          <li><a class="dropdown-item" href="partners/kapersky.html">Kapersky</a></li>
+          <li><a class="dropdown-item" href="partners/microsoft.html">Microsoft</a></li>
+          <li><a class="dropdown-item" href="partners/trend_micro.html">Trend Micro</a></li>
+
+
+        </ul>
+      </li>
+
+      <!-- Pricing -->
+      <li class="nav-item dropdown">
+        <a class="nav-link d-flex align-items-center" href="#">
+          Pricing <span class="plus-icon">+</span>
+        </a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="plans/basic.html">Basic</a></li>
+          <li><a class="dropdown-item" href="plans/standard.html">Standard</a></li>
+          <li><a class="dropdown-item" href="plans/premium.html">Premium</a></li>
+        </ul>
+      </li>
+
+      <!-- Activities -->
+      <li class="nav-item dropdown">
+        <a class="nav-link d-flex align-items-center" href="#">
+          Activities <span class="plus-icon">+</span>
+        </a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">Webinar</a></li>
+          <li><a class="dropdown-item" href="#">Blog</a></li>
+        </ul>
+      </li>
+
+      <!-- About Us -->
+      <li class="nav-item">
+        <a class="nav-link d-flex align-items-center" href="about.html">About Us
+        </a>
+      </li>
+
+    </ul>
+  </div>
+</nav>
 
   <!-- Hero Section -->
     <header class="hero">
@@ -147,11 +200,16 @@
         <h2>Our Trusted Partners</h2>
         <div class="logo-slider">
             <div class="logos">
-            <img src="images/micro.png" alt="Company 1">
-            <img src="images/fortinet" alt="Company 2">
-            <img src="images/ksp.png" alt="Company 3">
-            <img src="images/teng.png" alt="Company 5">
-            <img src="images/trend.png" alt="Company 6">
+            <img src="images/micro.webp" alt="MicroSoft logo">
+            <img src="images/fortinet.webp" alt="Fortinet logo">
+            <img src="images/ksp.webp" alt="Kapersky logo">
+            <img src="images/teng.webp" alt="Tenable logo">
+            <img src="images/trend.webp" alt="Trend Micro logo">
+            <img src="images/micro.webp" alt="MicroSoft logo">
+            <img src="images/fortinet.webp" alt="Fortinet logo">
+            <img src="images/ksp.webp" alt="Kapersky logo">
+            <img src="images/teng.webp" alt="Tenable logo">
+            <img src="images/trend.webp" alt="Trend Micro logo">
             </div>
         </div>
     </section>
@@ -185,7 +243,7 @@
 
       <!-- Contact Information -->
       <div class="col-lg-3 col-md-6 mb-4">
-        <h5 class="text-danger mb-3">Contact Us</h5>
+        <h5 class="text-danger mb-3">Get in touch with us</h5>
         <address class="opacity-75">
           <p class="mb-2"><i class="fas fa-envelope me-2"></i> <a href="mailto:info@spsnepra.com" class="footer-link">info@spsnepra.com</a></p>
           <p class="mb-2"><i class="fas fa-phone me-2"></i> <a href="tel:+923001234567" class="footer-link">+92 300 1234567</a></p>
@@ -222,9 +280,24 @@
 
 
 
-  <script src="js/script.js"></script>
-  <script src="js/validation.js"></script>
+  <script src="js/script.min.js"></script>
+  <script src="js/validation.min.js"></script>
   <!-- Bootstrap 5 JS Bundle (Popper included) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-</body>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "SPS NEPRA",
+  "url": "https://nepra.spsnet.com",
+  "logo": "https://nepra.spsnet.com/images/logo.png",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+92-300-1234567",
+    "contactType": "customer service"
+  }
+}
+</script>
+
+  </body>
 </html>

@@ -10,40 +10,148 @@ header {
   padding: 1rem;
 }
 
+
 .logo img {
   height: 50px !important;
   width: auto !important;
 }
 
 
-/* Base navbar (keep your existing styles too) */
-.navbar { display:flex; justify-content:space-between; align-items:center; width:100%;
-  padding:15px 40px; position:fixed; top:0; left:0; z-index:1000; background:rgba(0,0,0,.7); box-sizing:border-box; }
-
-.nav-links { list-style:none; margin:0; padding:20px; gap:20px; display:none;
-  position:absolute; right:0; top:60px; width:220px; background:rgba(0,0,0,.9); border-radius:0 0 0 8px; flex-direction:column; }
-.nav-links.active { display:flex; }
-.nav-links a { color:#fff; text-decoration:none; font-weight:500; }
-
-.nav-links a:hover{
-    color:#4869c5;
+/* Navbar base */
+/* Navbar container */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(6px);
+  z-index: 1000;
+  transition: background 0.3s ease;
+  
 }
-.menu-toggle { background:transparent; border:0; cursor:pointer; padding:8px; line-height:1; }
-.menu-toggle .icon::before { content:"☰"; font-size:28px; color:#fff; display:inline-block; }
-.menu-toggle.open .icon::before { content:"✖"; }
 
-/* Optional: on large screens you might want the menu inline */
-@media (min-width: 1024px) {
-  /* If you ALSO want a horizontal menu on desktop, uncomment:
-  .nav-links { position:static; display:flex; flex-direction:row; width:auto; background:transparent; padding:0; }
-  .nav-links.active { display:flex; }
-  */
+/* Logo styling */
+.navbar-brand img {
+  height: 60px;
+  max-width: 100%;
+  object-fit: contain;
 }
+
+/* Navigation links */
+.navbar-nav {
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  align-items: center;
+}
+
+.navbar-nav .nav-link {
+  color: #fff !important;
+  font-weight: 500;
+  padding: 8px 12px;
+  transition: color 0.3s ease, background 0.3s ease;
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus {
+  color: #4869c5 !important;
+  background-color: rgba(255, 255, 255, 0.05);
+  text-decoration: none;
+}
+
+/* Plus icon beside label */
+.plus-icon {
+  font-size: 16px;
+  margin-left: 6px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.plus-icon:hover {
+  color: #4869c5;
+}
+
+/* Dropdown menu floats below navbar without expanding it */
+.dropdown-menu {
+  position: absolute;
+  top: 100%; /* positions dropdown below the nav item */
+  left: 0;
+  z-index: 1050;
+  background: rgba(0, 0, 0, 0.95) !important;
+  border: none !important;
+  border-radius: 0 0 8px 8px;
+  min-width: 220px;
+  padding: 8px 0;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  display: none;
+}
+/* Dropdown items */
+.dropdown-menu .dropdown-item {
+  color: #fff;
+   position: relative;
+  padding: 10px 20px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-menu .dropdown-item:hover,
+.dropdown-menu .dropdown-item:focus {
+  background-color: #4869c5;
+  color: #fff;
+}
+
+/* Prevent dropdown from extending navbar when clicked */
+.navbar .dropdown-menu {
+  position: absolute !important;
+  top: 100% !important;
+  left: 0 !important;
+  margin-top: 0; /* remove any extra gap */
+}
+
+/* Make sure .show doesn't break positioning */
+.navbar .dropdown-menu.show {
+  display: block !important;
+  position: absolute !important;
+}
+
+
+/* Show dropdown on hover (desktop only) */
+@media (min-width: 992px) {
+  .nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+  }
+}
+
+
+/* Remove Bootstrap white hover background */
+.nav-item.dropdown > .nav-link:focus,
+.nav-item.dropdown > .nav-link:hover {
+  background: transparent !important;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
 
 
 .hero {
-        position: relative;
-  background: url("../images/banner-2.jpg") no-repeat center center/cover;
+  position: relative;
+  background: url("../images/banner.webp") no-repeat center center/cover;
     min-height: 100vh; /* fill full viewport */
     display: flex;
     justify-content: center;
@@ -65,7 +173,7 @@ header {
 
 header.hero {
     position: relative;
-    background: url('../images/banner-2.jpg') center/cover no-repeat;
+    background: url('../images/banner.webp') center/cover no-repeat;
     height: 80vh; /* adjust as needed */
     color: white;
 }
@@ -88,24 +196,86 @@ header.hero .hero-content {
     padding: 20px;
 }
 
-
 .plans {
-  padding: 2rem;
+  padding: 3rem 1rem;
   text-align: center;
+  background: #f9f9f9; /* light background to stand out */
+}
+
+.plans h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #222;
 }
 
 .plan-cards {
   display: flex;
-  justify-content: center;
-  gap: 1rem;
+  justify-content: center;   /* centers horizontally */
+  align-items: stretch;      /* makes all cards same height */
+  flex-wrap: wrap;           /* allows wrapping on smaller screens */
+  gap: 2rem;                 /* spacing between cards */
+  max-width: 1000px;         /* keeps them nicely contained */
+  margin: 0 auto;            /* centers the whole row */
 }
 
 .card {
-  background: #f8fafc;
-  padding: 1rem;
+  background: #fff;
+  padding: 2rem 1.5rem;
   border: 1px solid #ddd;
-  border-radius: 8px;
-  width: 200px;
+  border-radius: 10px;
+  width: 280px;              /* bigger, looks more balanced */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #0056b3; /* accent color */
+}
+
+.card .price {
+  font-size: 1.25rem;
+  margin: 1rem 0;
+  color: #333;
+}
+
+.card .features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem 0;
+  text-align: left;
+}
+
+.card .features li {
+  margin: 0.5rem 0;
+  font-size: 0.95rem;
+}
+
+.card .btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  background: #0056b3;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.2s ease;
+}
+
+.card .btn:hover {
+  background: #003f82;
+}
+
+/* Highlighted middle card */
+.card.featured {
+  border: 2px solid #0056b3;
+  background: #f0f6ff;
 }
 
 .compliance-form {
@@ -389,37 +559,38 @@ input.error-field {
 
 /* Partners Section */
 .partners {
-  padding: 60px 20px;
-  background: #f8f9fa;
-  text-align: center;
-}
-
-.partners h2 {
-  font-size: 2rem;
-  margin-bottom: 30px;
-  color: #004aad;
-}
-
-.logo-slider {
   overflow: hidden;
   width: 100%;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  padding: 20px 0;
+}
+
+.partners h2{
+  text-align: center;
 }
 
 .logos {
   display: flex;
-  gap: 60px;
-  transition: transform 0.5s linear;
+  gap: 100px;
+  animation: scroll 20s linear infinite;
 }
 
 .logos img {
   height: 50px;
-  width: auto;
-  transition: transform 0.3s ease;
+  object-fit: contain;
 }
 
-.logos img:hover {
-  transform: scale(1.1);
+/* Infinite scroll animation */
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
+
 
 
 /* Footer Styles */
