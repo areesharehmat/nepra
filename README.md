@@ -1,10 +1,10 @@
 # Nepra
 
 **Nepra** is a static, multipage frontend website built with HTML, CSS, and JavaScript.  
-It features responsive design, structured navigation, and visually distinct content sections — ideal for demonstrating foundational frontend development skills.
+It features responsive design, structured navigation, and visually distinct content sections for demonstrating foundational frontend development skills.
 
-## 🚀 What It Does
-This project delivers a clean, professional website layout with multiple linked pages and UI elements that are styled and responsive without using frameworks. It serves as a showcase of core web development fundamentals.
+## What It Does
+This project delivers a clean, professional website layout with multiple linked pages and UI elements that are styled and responsive without using frameworks. 
 
 ##  Project Structure
 
