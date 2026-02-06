@@ -30,8 +30,3 @@ This project delivers a clean, professional website layout with multiple linked 
 - **CSS3**
 - **JavaScript**
 
-## Usage
-
-1. Clone the repository  
-   ```bash
-   git clone https://github.com/areesharehmat/nepra
